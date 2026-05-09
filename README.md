@@ -107,7 +107,7 @@ Bu proje sayesinde:
 
 # 🔗 GitHub Repository
 
-👉 https://github.com/Ozan-10/Rentaly/tree/master
+👉 https://github.com/Ozan-10/-GoalZone-Football-Match-League-Management-Platform
 
 ---
 
