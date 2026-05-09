@@ -1,7 +1,21 @@
 # ⚽ GoalZone – Football Match & League Management Platform
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop" width="100%" />
+  <img width="1098" height="901" alt="puandurumu1" src="https://github.com/user-attachments/assets/356356b1-3e8a-448f-87d8-b1b999ea229c" />
+  <img width="982" height="910" alt="puandurumu2" src="https://github.com/user-attachments/assets/227a2576-61bc-4a67-8eb5-7e490ae9f6a3" />
+  <img width="992" height="857" alt="maclist" src="https://github.com/user-attachments/assets/cebbf7cf-ed2b-436c-9b6c-bd60da5204b4" />
+  <img width="1008" height="901" alt="maclist1" src="https://github.com/user-attachments/assets/4278063f-f77e-47f4-ad17-4f7e546dcf8b" />
+  <img width="987" height="887" alt="macskor1" src="https://github.com/user-attachments/assets/761b584e-8e0f-46de-9244-3393b9ed8b93" />
+  <img width="1010" height="898" alt="macskor2" src="https://github.com/user-attachments/assets/8afe9a37-2f0e-44ee-a1d5-a625ba6e8ac3" />
+  <img width="1002" height="897" alt="macekle" src="https://github.com/user-attachments/assets/79372f5a-5591-408c-bac4-01314831852e" />
+
+
+
+
+  
+
+
+
 </p>
 
 <p align="center">
