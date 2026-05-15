@@ -1,0 +1,280 @@
+﻿@model List<Project5Day.WebUI.Dtos.LeagueDtos.ResultLeagueDto>
+
+@{
+    Layout = "~/Views/Shared/_GoalZoneLayout.cshtml";
+}
+
+<div class="pg-head">
+
+    <div class="wrap">
+
+        <div class="row align-items-end g-4">
+
+            <div class="col-lg-7">
+
+                <div class="pg-badge">
+                    🏆 Premier League
+                </div>
+
+                <h1 class="pg-title">
+                    Puan Durumu
+                </h1>
+
+                <div class="pg-sub">
+                    2025/2026 sezonu güncel lig sıralaması
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="legend">
+
+                    <div class="leg-item">
+                        <span class="leg-dot cl-ucl"></span>
+                        Şampiyonlar Ligi
+                    </div>
+
+                    <div class="leg-item">
+                        <span class="leg-dot cl-uel"></span>
+                        Avrupa Ligi
+                    </div>
+
+                    <div class="leg-item">
+                        <span class="leg-dot cl-rel"></span>
+                        Küme Düşme
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="tbl-wrap">
+
+    <div class="wrap">
+
+        <!-- TOP STATS -->
+
+        <div class="top-stats">
+
+            <div class="ts-card">
+
+                <div class="ts-label">
+                    Lider
+                </div>
+
+                <div class="ts-val">
+                    @Model.FirstOrDefault()?.Points
+                </div>
+
+                <div class="ts-team">
+                    @Model.FirstOrDefault()?.TeamName
+                </div>
+
+            </div>
+
+            <div class="ts-card">
+
+                <div class="ts-label">
+                    En Çok Gol
+                </div>
+
+                <div class="ts-val">
+                    @Model.Max(x => x.GoalsFor)
+                </div>
+
+                <div class="ts-team">
+                    @Model.OrderByDescending(x => x.GoalsFor).FirstOrDefault()?.TeamName
+                </div>
+
+            </div>
+
+            <div class="ts-card">
+
+                <div class="ts-label">
+                    En Az Gol Yiyen
+                </div>
+
+                <div class="ts-val">
+                    @Model.Min(x => x.GoalsAgainst)
+                </div>
+
+                <div class="ts-team">
+                    @Model.OrderBy(x => x.GoalsAgainst).FirstOrDefault()?.TeamName
+                </div>
+
+            </div>
+
+            <div class="ts-card">
+
+                <div class="ts-label">
+                    Toplam Takım
+                </div>
+
+                <div class="ts-val">
+                    @Model.Count()
+                </div>
+
+                <div class="ts-team">
+                    Premier League
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TABLE -->
+
+        <table class="std-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th class="team-col">
+                        Takım
+                    </th>
+
+                    <th>O</th>
+
+                    <th>G</th>
+
+                    <th>B</th>
+
+                    <th>M</th>
+
+                    <th class="hide-sm">
+                        AG
+                    </th>
+
+                    <th class="hide-sm">
+                        YG
+                    </th>
+
+                    <th>AV</th>
+
+                    <th>P</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @{
+                    int count = 0;
+                }
+
+                @foreach (var item in Model)
+                {
+                    count++;
+
+                    string stripClass = "cl-none";
+
+                    if (count == 1)
+                    {
+                        stripClass = "cl-champ";
+                    }
+                    else if (count <= 4)
+                    {
+                        stripClass = "cl-ucl";
+                    }
+                    else if (count <= 6)
+                    {
+                        stripClass = "cl-uel";
+                    }
+                    else if (count >= 18)
+                    {
+                        stripClass = "cl-rel";
+                    }
+
+                    <tr class="std-row">
+
+                        <td class="pos-cell">
+
+                            <div class="pos-strip @stripClass"></div>
+
+                            <div class="pos-num">
+
+                                @count
+
+                            </div>
+
+                        </td>
+
+                        <td>
+
+                            <div class="team-cell">
+
+                                <div class="t-logo">
+
+                                    <img src="@item.LogoUrl" />
+
+                                </div>
+
+                                <div class="t-name">
+
+                                    <span class="t-full">
+                                        @item.TeamName
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td class="s-mp">
+                            @item.Played
+                        </td>
+
+                        <td class="s-w">
+                            @item.Won
+                        </td>
+
+                        <td class="s-d">
+                            @item.Draw
+                        </td>
+
+                        <td class="s-l">
+                            @item.Lost
+                        </td>
+
+                        <td class="s-gf hide-sm">
+                            @item.GoalsFor
+                        </td>
+
+                        <td class="s-ga hide-sm">
+                            @item.GoalsAgainst
+                        </td>
+
+                        <td class="s-gd @(item.GoalDifference > 0 ? "pos" : item.GoalDifference < 0 ? "neg" : "zero")">
+
+                            @(item.GoalDifference > 0 ? "+" : "")@item.GoalDifference
+
+                        </td>
+
+                        <td class="s-pts @(count == 1 ? "pts-top" : "")">
+
+                            @item.Points
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

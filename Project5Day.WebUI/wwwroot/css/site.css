@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.goalzone-match-card {
+    background: #091428;
+    border: 1px solid #13203b;
+    border-radius: 18px;
+    padding: 35px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.team-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.score-area {
+    font-size: 42px;
+    font-weight: bold;
+    color: #00ff87;
+}
+
+.score-divider {
+    margin: 0 10px;
+    color: #fff;
+}
+
+.match-date {
+    margin-top: 10px;
+    color: #8ca0c7;
+    font-size: 14px;
+}
+
+.match-footer {
+    border-top: 1px solid #13203b;
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.stadium-text {
+    color: #8ca0c7;
+}

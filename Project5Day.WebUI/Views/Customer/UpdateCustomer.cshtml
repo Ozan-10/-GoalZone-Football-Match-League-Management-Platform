@@ -1,0 +1,25 @@
+﻿@model Project5Day.WebUI.Dtos.CustomerDtos.GetByIdCustomerDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="CustomerId" />
+        <label>Müşteri Adı</label>
+        <input type="text" asp-for="customerName" class="form-control" />
+        <br />
+        <label>Müşteri Soyadı</label>
+        <input type="text" asp-for="customerSurname" class="form-control" />
+        <br />
+        <label>Müşteri Şehir</label>
+        <input type="text" asp-for="customerCity" class="form-control" />
+        <br />
+        <button class="btn btn-success">Müşteriyi Kaydet</button>
+    </form>
+</div>
+
+

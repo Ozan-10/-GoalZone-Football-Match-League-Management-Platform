@@ -1,0 +1,72 @@
+﻿@model Project5Day.WebUI.Dtos.MatchDtos.CreateMatchDto
+
+<div class="content-wrapper">
+
+    <div class="page-header">
+        <h3>Yeni Maç Ekle</h3>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <form method="post">
+
+                <!-- TAKIMLAR -->
+                <h5 class="mb-3">Takımlar</h5>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Ev Sahibi Takım</label>
+                        <select class="form-control" asp-for="HomeTeamId">
+                            <option value="">Seçin...</option>
+                            @foreach (var item in ViewBag.Teams)
+                            {
+                                <option value="@item.TeamId">@item.TeamName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Deplasman Takım</label>
+                        <select class="form-control" asp-for="HomeTeamId">
+                            <option value="">Seçin...</option>
+                            @foreach (var item in ViewBag.Teams)
+                            {
+                                <option value="@item.TeamId">@item.TeamName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <!-- MAÇ BİLGİLERİ -->
+                <h5 class="mt-4 mb-3">Maç Bilgileri</h5>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Maç Tarihi</label>
+                        <input type="datetime-local" class="form-control" asp-for="MatchDate" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Stadyum</label>
+                        <input type="text" class="form-control" asp-for="Stadium" />
+                    </div>
+                </div>
+
+                <!-- BUTON -->
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success">
+                        + Maç Ekle
+                    </button>
+
+                    <a href="/Match/MatchList" class="btn btn-secondary">
+                        İptal
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

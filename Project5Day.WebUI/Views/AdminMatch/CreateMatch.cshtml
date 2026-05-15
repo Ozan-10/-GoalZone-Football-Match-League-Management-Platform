@@ -1,0 +1,319 @@
+﻿@{
+    ViewData["Title"] = "Create Match";
+    Layout = "~/Views/Shared/_GoalZoneLayout.cshtml";
+}
+
+<div class="match-page">
+
+    <div class="match-header">
+
+        <span class="badge-area">
+            ⚽ Yeni Kayıt
+        </span>
+
+        <h1>Maç Ekle</h1>
+
+        <p>Yeni bir maç tanımla</p>
+
+    </div>
+
+    <div class="match-card">
+
+        <form>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label>Ev Sahibi Takım</label>
+
+                        <select class="form-control">
+
+                            <option>Seçiniz...</option>
+                            <option>Manchester City</option>
+                            <option>Arsenal</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Deplasman Takımı</label>
+
+                        <select class="form-control">
+
+                            <option>Seçiniz...</option>
+                            <option>Liverpool</option>
+                            <option>Chelsea</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Stadyum</label>
+
+                        <select class="form-control">
+
+                            <option>Seçiniz...</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Sezon</label>
+
+                        <select class="form-control">
+
+                            <option>2024-2025</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Hafta</label>
+
+                        <input type="number"
+                               class="form-control" />
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Maç Tarihi</label>
+
+                        <input type="datetime-local"
+                               class="form-control" />
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Durum</label>
+
+                        <select class="form-control">
+
+                            <option>Henüz Oynanmadı</option>
+                            <option>Canlı</option>
+                            <option>Bitti</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label>Gösterim URL</label>
+
+                        <input type="text"
+                               class="form-control" />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="score-title">
+
+                Skor Bilgileri
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+                    <input type="number"
+                           class="form-control"
+                           placeholder="İlk Yarı Ev" />
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <input type="number"
+                           class="form-control"
+                           placeholder="İlk Yarı Dep." />
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Maç Sonu Ev" />
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Maç Sonu Dep." />
+
+                </div>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="save-btn">
+
+                    ✓ Maçı Kaydet
+
+                </button>
+
+                <button class="cancel-btn">
+
+                    ✕ İptal
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<style>
+
+    .match-page {
+        padding: 70px 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at top left,#0b1f4d 0%,#020617 45%,#020617 100%);
+    }
+
+    .match-header {
+        width: 1100px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    .badge-area {
+        background: #1e293b;
+        color: #facc15;
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .match-header h1 {
+        color: white;
+        font-size: 64px;
+        font-weight: 900;
+        margin-top: 20px;
+    }
+
+    .match-header p {
+        color: #64748b;
+        font-size: 18px;
+    }
+
+    .match-card {
+        width: 1100px;
+        margin: auto;
+        background: rgba(15,23,42,.92);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 28px;
+        padding: 45px;
+    }
+
+    .form-group {
+        margin-bottom: 28px;
+    }
+
+        .form-group label {
+            color: #94a3b8;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+    .form-control {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        color: white;
+        height: 58px;
+        border-radius: 14px;
+    }
+
+        .form-control:focus {
+            background: #0f172a;
+            color: white;
+            border-color: #22c55e;
+            box-shadow: none;
+        }
+
+    .score-title {
+        color: #64748b;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .button-area {
+        margin-top: 35px;
+        display: flex;
+        gap: 16px;
+    }
+
+    .save-btn {
+        background: linear-gradient(90deg,#22c55e,#3b82f6);
+        border: none;
+        color: white;
+        height: 58px;
+        padding: 0 35px;
+        border-radius: 16px;
+        font-weight: 800;
+    }
+
+    .cancel-btn {
+        background: #1e293b;
+        border: none;
+        color: #cbd5e1;
+        height: 58px;
+        padding: 0 35px;
+        border-radius: 16px;
+        font-weight: 700;
+    }
+
+</style>
